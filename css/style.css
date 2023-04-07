@@ -1,0 +1,275 @@
+* {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+body {
+    background-image: url(/img/rm245-bb-15.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+#enviarInfoPasajero {
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 300px;
+    font-size: large;
+    padding: 15px;
+}
+#enviarDatosAsiento {
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 300px;
+    font-size: large;
+    padding: 15px;
+}
+
+#img_bus {
+    float: right;
+    margin-right: 300px;
+    margin-top: 100px;
+    border-radius: 15%;
+}
+
+
+.linea-separadora {
+    height: 1px;
+    border-top: 2px solid #030303;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    width: 50%;
+    max-width: 300px;
+    margin-top:300px;
+    margin-left: 100px;
+    position: relative;
+  }
+
+  .title_pasaje {
+    font-family: 'Raleway', sans-serif;
+    text-decoration: solid;
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    z-index: 1;
+    
+  }
+
+  .container_text {
+    position: relative;
+  }
+
+  .container_parrafo {
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    width: 30%;
+    top: 20%px;
+    right: 30%;
+    z-index: 1;
+
+  }
+
+  .container_btn {
+    display: flex;
+    justify-content: center;
+  }
+  .btn_comprar {
+    position: relative;
+    left: 50px;
+    top: 50px;
+  }
+  
+  .btn_verpasajeros {
+    position: relative;
+    right:300px;
+    top: 50px;
+  }
+
+  #boton-ver-viajes {
+    position: relative;
+    top: 100px;
+  }
+
+  #comprar-pasaje {
+    position: relative;
+    left: 250px;
+    top: 50px;
+  }
+
+  .link_pasaje {
+    color: white;
+    text-decoration: none;
+  }
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+#form1 input {
+  margin-top: 50px;
+
+}
+#form1 input::placeholder {
+    font-weight: 600;
+
+}
+
+.title_datos {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #141E30;
+    font-weight: 600;
+    margin: 0 auto;
+
+}
+
+
+#form2 input {
+  margin-top: 50px;
+
+}
+
+#form2 p {
+    font-weight: 600;
+}
+
+#form2 input::placeholder {
+    font-weight: 600;
+
+}
+
+
+
+#form3 p {
+    font-weight: 600;
+}
+
+#form3 input::placeholder {
+    font-weight: 600;
+
+}
+
+#form1 {
+    float: left;
+    margin: 0 auto;
+
+    width: 460px;
+    height: 800px;
+    padding: 30px;
+
+    background-color: #5658db;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #141E30;
+
+
+  }
+  #form2 {
+    margin: 0 auto;
+    
+    width: 460px;
+    height: 800px;
+    padding: 30px;
+
+    background-color: #5658db;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #141E30;
+
+  }
+  #form3 {
+    margin: 0 auto;
+    
+    width: 460px;
+    height: 800px;
+    padding: 30px;
+
+    background-color: #5658db;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #141E30;
+
+  }
+  #form4 {
+    margin: 0 auto;
+    
+    width: 460px;
+    height: 800px;
+    padding: 30px;
+
+    background-color: #5658db;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #141E30;
+
+  }
+
+
+  #form1_error {
+    color: red;
+    font-weight: 800;
+  }
+  #form2_error {
+    color: red;
+    font-weight: 800;
+  }
+  #form3_error {
+    color: red;
+    font-weight: 800;
+  }
+
+
+  #loader {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+  }
+
+
+
+  .asiento {
+    width: 160px;
+  height: 80px;
+  background-color: #141E30;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  }
+
+  .container-cards {
+    text-align: center;
+  }
+  
+  .card {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+  }
+
+  #comprar-pasaje, #nuevo-pasaje, #ver-pasaje, #ver-pasajeros, #boton-ver-pasajeros {
+    top: 100px;
+    position: relative;
+    display: block;
+    padding: 20px;
+    margin: 10px;
+  }
+
+
+  #comprar-pasaje {
+    left: 0px;
+  }

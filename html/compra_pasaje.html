@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Compra del pasaje</title>
+</head>
+<body>
+
+        
+ 
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../html/index.html">Travel Bus</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="../html/index.html">Inicio</a>
+          <a class="nav-link" href="../html/lugares.html">Destinos</a>
+          <a class="nav-link" href="../html/compra_pasaje.html">Comprar Pasaje</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+     <!--Formulario NRO 1: El alta del pasajero-->
+    <form id="form1">
+        <h2 class="title_datos">1) Ingrese datos personales</h2>
+        <p id="form1_error"></p>
+        <div class="row">
+            <div class="col">
+              <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+              <div class="col">
+              <input type="text" id="apellido" class="form-control" placeholder="Apellido">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col">
+              <input type="text" id="edad" class="form-control" placeholder="DNI">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col">
+              <input type="text" id="email" class="form-control" placeholder="Email">
+            </div>
+        </div>
+          <button type="button" id="enviarInfoPasajero" class="btn btn-success">Siguiente</button>
+
+          
+    </form>
+  
+  
+     <!--Formulario NRO 2: Selección del país origen y destino, seleccionando el origen destino primero, posteriormente la fecha del viaje-->
+    <form id="form2">
+        <h2 class="title_datos">2) Ingrese destino y fecha</h2>
+        <p id="form2_error"></p>
+        <div class="row">
+          <div class="col">
+            <input type="text" id="origen" class="form-control" placeholder="Ingrese origen">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <input type="text" id="destino" class="form-control" placeholder="Ingrese destino">
+          </div>
+        </div>
+        <button type="button" class="btn btn-success" id="btn-origen-destino">Seleccionar</button>
+        <div class="row">
+            <div class="col">
+                <br>
+                <p>Ingrese fecha de ida (Recorda que debes sacar el pasaje de ida un día posterior al de hoy)</p>
+                <input type="date" id="fechaIda" placeholder="Ingrese fecha">
+            </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <br>
+            <p>Ingrese fecha de regreso</p>
+            <input type="date" id="fechaVuelta" placeholder="Ingrese fecha">
+        </div>
+        </div>
+        <br>
+        <button type="button" id="enviarInfoPais" class="btn btn-success">Siguiente</button>
+  
+    </form>
+  
+
+
+    <!--Formulario NRO 3: Selección del asiento para el pasaje-->
+    <form id="form3">
+        <h2 class="title_datos">3) Seleccione asiento</h2>
+        <p id="form3_error"></p>
+       <div id="tablero-asientos">
+
+      </div>
+      <button type="button" id="enviarDatosAsiento" class="btn btn-success">Siguiente</button>
+        
+    </form>
+
+
+
+    <!--Formulario NRO 4: Compra del pasaje, ver pasaje, pasajeros registrados, volver a comprar otro pasaje-->
+        <form id="form4">
+          <h2 class="title_datos">4) Comprar pasaje</h2>
+        
+          <p>Está todo listo para comprar tu pasaje. Presiona en el boton comprar.</p>
+          <button type="button" id="comprar-pasaje" class="btn btn-success btn-lg">
+            COMPRAR PASAJE
+          </button>
+
+          <!-- Button modal VER PASAJE -->
+         <button type="button" id="ver-pasaje" class="btn btn-dark btn-lg" data-bs-toggle="modal"
+         data-bs-target="#exampleModal">
+         VER PASAJE
+       </button>
+
+          <button  type="button" id="nuevo-pasaje" class="btn btn-primary btn-lg"  onclick="window.location.href='compra_pasaje.html'">
+         COMPRAR OTRO PASAJE
+         </button>
+         
+         <!-- Button modal VER PASAJEROS REGISTRADOS -->
+   <button type="button" class="btn btn-warning btn-lg" id="boton-ver-pasajeros" data-bs-toggle="modal" data-bs-target="#exampleModalLong">
+     VER PASAJEROS REGISTRADOS
+   </button>
+   <button type="button" class="btn btn-warning btn-lg" id="boton-ver-viajes" data-bs-toggle="modal" data-bs-target="#exampleModalViajes">
+     VER VIAJES REGISTRADOS
+   </button>
+
+        </form>
+        
+
+<!-- Loader para las cargas de los formularios -->
+                 <div id="loader" class="text-center">
+                   <div class="spinner-border" role="status">
+                     <span class="sr-only"></span>
+                   </div>
+                 </div>
+
+
+
+<!-- Modales que aparecen en la parte final del formulario -->
+<!-- Modal VER PASAJEROS REGISTRADOS -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Pasajeros Registrados</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="ver-pasajeros">
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+       <!--Modal VER PASAJE--> 
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Detalles del Viaje</h5>
+            </div>
+            <div id="modal-body">
+           
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+      </div>
+  </div>
+
+       <!--Modal VER PASAJE--> 
+      <div class="modal fade" id="exampleModalViajes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Viajes Registrados</h5>
+            </div>
+            <div id="ver-viajes">
+           
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+      </div>
+  </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="../js/main.js"></script>
+</html>
